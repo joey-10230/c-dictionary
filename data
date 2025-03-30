@@ -1,0 +1,57 @@
+#include <iostream>
+#include <string>
+#include <unordered_map>
+
+using namespace std;
+
+int main() {
+    unordered_map<string, string> fruitDictionary = {
+        {"APPLE", "A sweet, red or green fruit."},
+        {"BANANA", "A long, yellow fruit that is soft inside."},
+        {"ORANGE", "A round, juicy citrus fruit."},
+        {"MANGO", "A tropical fruit that is sweet and juicy."},
+        {"GRAPE", "Small, round fruits that grow in bunches."},
+        {"PINEAPPLE", "A tropical fruit with spiky skin and sweet flesh."},
+        {"WATERMELON", "A large fruit with a green rind and red, juicy inside."},
+        {"STRAWBERRY", "A small red fruit with tiny seeds on its surface."},
+        {"PEACH", "A soft, sweet fruit with fuzzy skin."},
+        {"CHERRY", "A small, red fruit with a pit inside."},
+        {" LEMON"," A Yellow fruit with sour taste of it."},
+        {"LIME", "A green round fruit with a sour taste."},
+        {"PEACH", "A soft, sweet fruit with fuzzy skin and a large pit inside."},
+        {"BLUEBERRY", " A tiny, round fruit that is deep blue and has a sweet taste."},
+        {" BLACKBERRY"," A dark purple berry that grows in clusters and has a tart taste."},
+        {" RASPBERRY", "A small, red or black berry with a soft, juicy texture."},
+        {" PAPAYA","A tropical fruit with orange flesh and black seeds inside a green or yellow skin."},
+        {" COCONUT", "A large, brown shell containing white flesh and refreshing water."},
+        {" FIG", "A soft, sweet fruit with a thin skin and tiny edible seeds inside."},
+        {"GUAVA", "A green or pink tropical fruit with a sweet and slightly tart flavor."},
+        {"DRAGON FRUIT ", " A bright pink fruit with white or red speckled flesh and tiny seeds."},
+        {"LYCHEE", "A small, red fruit with rough skin and sweet, juicy white flesh inside."},
+        {"PASSIONFRUIT","A small, round fruit with a tough rind and juicy, seed-filled interior."},
+        {"PERSIMMON", "A bright orange fruit with smooth skin and a honey-like taste."},
+        {"STARFRUIT", "A yellow fruit with a star-shaped cross-section and a tangy-sweet flavor."},
+        {"DURIAN","A large tropical fruit with a strong smell and creamy, sweet flesh inside."},
+        {"CANTALOUPE", "A round melon with orange, sweet, and juicy flesh inside a rough skin."},
+        {"HONEY DUE", "A smooth, green-skinned melon with sweet, pale green flesh inside."},
+        {"TAMARIND", "A brown pod with sticky, tangy pulp often used in cooking and drinks."},
+        
+    };
+
+    string input;
+    cout << "Enter a fruit name: ";
+    getline(cin, input);
+
+    // Convert input to uppercase for case-insensitive comparison
+    for (char &c : input) {
+        c = toupper(c);
+    }
+
+    if (fruitDictionary.find(input) != fruitDictionary.end()) {
+        cout << fruitDictionary[input] << endl;
+    } else {
+        cout << "Sorry, no information available for \"" << input << "\"." << endl;
+    }
+
+    return 0;
+}
